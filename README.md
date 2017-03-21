@@ -41,12 +41,6 @@
     03-21 12:01:53.462 6508-6508/com.example.sunzh.testdemo E/TAG: onDestroy()
 
 ## 总结
-如果需要获取某个View的宽高，可以在onWindowFocusChanged()处直接获取即可，
-这比对某个view设置onGlobalLayoutListener的方式来获取方便了许此。
-又比如，对于需要读取本地文件记录来判断是否是第一次打开界面去提示文本图片的，
-也可以在此方法中去读取然后再显示在ui上。
+如果需要获取某个View的宽高，可以在onWindowFocusChanged()处直接获取即可，这比对某个view设置onGlobalLayoutListener的方式来获取方便了许此。又比如，对于需要读取本地文件记录来判断是否是第一次打开界面去提示文本图片的，也可以在此方法中去读取然后再显示在ui上。
 
-调用顺序为Activity.oncreate()→Activity.onResume()→
-→MyTextView.onMeasure()→MyTextView.onLayout()→onGlobalLayoutListener()→
-→Activity.onWidnowFocusChanged()→.....→
-→MyTextView.onDraw()
+调用顺序为Activity.oncreate()→Activity.onResume()→MyTextView.onMeasure()→MyTextView.onLayout()→onGlobalLayoutListener()→Activity.onWidnowFocusChanged()→.....→MyTextView.onDraw()
