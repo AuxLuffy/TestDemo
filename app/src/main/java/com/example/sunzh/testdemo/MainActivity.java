@@ -20,12 +20,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        textView = new MyTextView(this);
 //        textView.setPadding(10, 10, 10, 10);
         setContentView(R.layout.activity_main);
-        textView = (TextView) findViewById(R.id.textview);
-        textView.setOnClickListener(this);
+        init();
+
+
         /*setContentView(R.layout.activity_main);
         textView = (TextView) findViewById(R.id.textview);
         Log.e("TAG", "onCreate()");
         Log.e("Activity", "onCreate()__textview.height:" + textView.getHeight() + ", textview.width:" + textView.getWidth());*/
+    }
+
+    private void init() {
+        textView = (TextView) findViewById(R.id.textview);
+        textView.setOnClickListener(this);
     }
 
     @Override
@@ -78,6 +84,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         Log.e("TAG", "onConfigurationChanged()");
+        setContentView(R.layout.activity_main);
+        init();
     }
 
     @Override
@@ -114,5 +122,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
         }
+    }
+
+
+    @Override
+    public Object onRetainCustomNonConfigurationInstance() {
+
+        return super.onRetainCustomNonConfigurationInstance();
+
     }
 }
