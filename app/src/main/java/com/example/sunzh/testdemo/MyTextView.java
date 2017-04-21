@@ -5,17 +5,18 @@ import android.graphics.Canvas;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.widget.TextView;
 
 /**
  * Created by sunzh on 2017/3/21.
  */
 
-public class MyTextView extends android.support.v7.widget.AppCompatTextView {
+public class MyTextView extends TextView {
     public static final String TAG = "MyTextView";
 
     public MyTextView(Context context) {
         this(context, null);
-        setText("test test");
+//        setText("test test");
     }
 
 
@@ -47,7 +48,7 @@ public class MyTextView extends android.support.v7.widget.AppCompatTextView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Log.e(TAG, "onDraw()");
-        measure(0, 0);
+//        measure(0, 0);
         Log.e(TAG, "width: " + getWidth() + ", height: " + getHeight());
         Log.e(TAG, "MeasuredWidth: " + getMeasuredWidth() + ", MeasuredHeight: " + getMeasuredHeight());
 
