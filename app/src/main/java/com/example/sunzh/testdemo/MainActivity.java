@@ -14,10 +14,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        Log.e("TAG", "onCreate()");
+        textView = new MyTextView(this);
+        textView.setPadding(10, 10, 10, 10);
+        setContentView(textView);
+
+        /*setContentView(R.layout.activity_main);
         textView = (TextView) findViewById(R.id.textview);
         Log.e("TAG", "onCreate()");
-        Log.e("Activity", "onCreate()__textview.height:" + textView.getHeight() + ", textview.width:" + textView.getWidth());
+        Log.e("Activity", "onCreate()__textview.height:" + textView.getHeight() + ", textview.width:" + textView.getWidth());*/
     }
 
     @Override
@@ -81,6 +86,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
         super.onSaveInstanceState(outState, outPersistentState);
+        Log.e("TAG", "onSaveInstanceState()");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
         Log.e("TAG", "onSaveInstanceState()");
     }
 }
