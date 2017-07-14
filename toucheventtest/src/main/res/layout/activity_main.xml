@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.toucheventtest.View.MyViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootview"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:background="#ff0"
+    android:gravity="center"
+    tools:context="com.example.toucheventtest.MainActivity">
+
+    <com.example.toucheventtest.View.MyView
+        android:id="@+id/tv_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#f00"
+        android:gravity="center" />
+
+</com.example.toucheventtest.View.MyViewGroup>

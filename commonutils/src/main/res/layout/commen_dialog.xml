@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_bg_dialog"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+
+        android:id="@+id/linear_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="60dp"
+        android:orientation="vertical"
+        android:paddingBottom="27dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="27dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#333333"
+            android:textSize="@dimen/text_16_size"
+            android:text="提示"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:textColor="#333333"
+            android:textSize="@dimen/text_14_size" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_dialogLine"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="#cdcdcd" />
+
+    <RelativeLayout
+
+        android:id="@+id/linear_dialogBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+        <TextView
+            android:id="@+id/tv_center_positive"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/wiget_40_gap"
+            android:background="@drawable/selector_dialog_centerbtn_bg"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textColor="@drawable/selector_btntext_white_red"
+            android:textSize="@dimen/text_14_size" />
+        <LinearLayout
+            android:id="@+id/ll_bottom_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/wiget_40_gap"
+            android:layout_gravity="bottom"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btn_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:background="@drawable/selector_dialog_leftbtn_bg"
+                android:gravity="center"
+                android:textColor="@drawable/selector_btntext_white_gray"
+                android:textSize="@dimen/text_14_size" />
+
+            <ImageView
+                android:id="@+id/img_dividerLine"
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#cdcdcd" />
+
+            <TextView
+                android:id="@+id/btn_positive"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:background="@drawable/selector_dialog_rightbtn_bg"
+                android:gravity="center"
+                android:textColor="@drawable/selector_btntext_white_red"
+                android:textSize="@dimen/text_14_size" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

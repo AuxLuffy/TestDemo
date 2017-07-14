@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_16_size">16sp</dimen>
+    <dimen name="text_14_size">14sp</dimen>
+    <dimen name="wiget_40_gap">40dp</dimen>
+    <dimen name="wiget_10_gap">10dp</dimen>
+</resources>

@@ -1,1 +1,1 @@
-include ':app',':databasedemo'
+include ':app', ':databasedemo', ':toucheventtest', ':commonutils'
