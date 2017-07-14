@@ -5,13 +5,12 @@ import android.graphics.Canvas;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.widget.TextView;
 
 /**
  * Created by sunzh on 2017/3/21.
  */
 
-public class MyTextView extends TextView {
+public class MyTextView extends android.support.v7.widget.AppCompatTextView {
     public static final String TAG = "MyTextView";
 
     public MyTextView(Context context) {

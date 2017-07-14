@@ -1,5 +1,6 @@
 package com.example.sunzh.testdemo;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -100,6 +101,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.e("TAG", "onSaveInstanceState()");
     }
 
+    /**
+     * 当系统容易杀死此activity时会在onpause后调用
+     * 1、当用户按下HOME键时。
+     这是显而易见的，系统不知道你按下HOME后要运行多少其他的程序，自然也不知道activity A是否会被销毁，故系统会调用onSaveInstanceState，让用户有机会保存某些非永久性的数据。以下几种情况的分析都遵循该原则
+     2、长按HOME键，选择运行其他的程序时。
+     3、按下电源按键（关闭屏幕显示）时。
+     4、从activity A中启动一个新的activity时。
+     5、屏幕方向切换时，例如从竖屏切换到横屏时。
+     http://gundumw100.iteye.com/blog/1115080
+
+
+     android:theme="@android:style/Theme.Dialog"
+     * @param outState
+     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -109,18 +124,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Configuration configuration = getResources().getConfiguration();
-        int orientation = configuration.orientation;
         switch (v.getId()) {
             case R.id.textview:
-                if (orientation == Configuration.ORIENTATION_LANDSCAPE) {//此时是横屏
-                    //切换到竖屏
-                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-                } else {//当前是竖屏
-                    //切换至横屏
-                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-                }
+//                toggleOrientation();
+                openActivity(RefreshActivity.class);
                 break;
+        }
+    }
+
+    private void openActivity(Class activityClass) {
+        Intent intent = new Intent(MainActivity.this, activityClass);
+        startActivity(intent);
+    }
+
+    private void toggleOrientation() {
+        Configuration configuration = getResources().getConfiguration();
+        int orientation = configuration.orientation;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {//此时是横屏
+            //切换到竖屏
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        } else {//当前是竖屏
+            //切换至横屏
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         }
     }
 
